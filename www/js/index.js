@@ -164,7 +164,7 @@ var app = {
 
             $.each(obj.dias, function(i, v) {
                 var setandoInt = parseInt(v.valor);
-                if (setandoInt == 1) {
+                if (setandoInt == 49) {
                     $("#dia-"+i+"").html("<span class=\"label label-success\">Sim</span>");
                 } else {
                     $("#dia-"+i+"").html("<span class=\"label label-danger\">Não</span>");                    
@@ -175,8 +175,11 @@ var app = {
 
             var info = ""+obj.dia +" de  " + obj.mes + " de " + obj.ano+"";
             var hora = ""+obj.hora + ":"+ obj.minuto + ":"+ obj.segundo+"";
+            var intervalo = ""+obj.intervalo +"";
             $("#data").text(info);
             $("#hora").text(hora);
+            $("#intervalo").text(intervalo);
+
 
             //if (data.a === parseInt(data.valor))
             //app.mudaStatus("#flip-"+parseInt(obj.dia)+"", ""+parseInt(obj.valor)+"");
@@ -185,7 +188,7 @@ var app = {
         });
 
         bluetoothSerial.available(function (numBytes) {
-            console.log("There are " + numBytes + " available to read.");
+            //console.log("There are " + numBytes + " available to read.");
             app.display("bytes: " + numBytes);
         }, app.failure);
 
